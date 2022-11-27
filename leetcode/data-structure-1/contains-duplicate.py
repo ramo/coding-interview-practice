@@ -36,15 +36,10 @@ class Solution:
         # if found return True
         # else check all the numers
         # if nothing found finally return False
-        i = 0
-        while (i < len(nums)):
-            j = i + 1
-            while (j < len(nums)):
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
                 if (nums[i] == nums[j]):
                     return True
-                else:
-                    j += 1
-            i += 1
         return False
     
     # Time: O(n * logn) + O(n)
