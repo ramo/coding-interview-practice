@@ -26,6 +26,8 @@
 
 # Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
+from typing import List
+
 class Solution:
     
     # if all numbers are negative
@@ -76,3 +78,11 @@ class Solution:
         for i in range(1, len(nums)):
             max_sums[i] = max(nums[i], max_sums[i-1] + nums[i])
         return max(max_sums)
+
+
+if __name__ == "__main__":
+    solution = Solution()
+    nums = [1,3,4,5,6,7,8]
+    result = solution.maxSubArray(nums)
+    print(result)
+
