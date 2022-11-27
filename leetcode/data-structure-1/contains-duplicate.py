@@ -66,12 +66,12 @@ class Solution:
         # if exists return True
         # if not, put the number in to dict
         # finally if nothing found return False
-        dict = {}
-        for i in nums:
-            if i in dict.keys():
+        vistited_numbers = {}
+        for num in nums:
+            if num in vistited_numbers.keys():
                 return True
             else:
-                dict[i] = "F"
+                dict[num] = "None"
         return False
 
 
