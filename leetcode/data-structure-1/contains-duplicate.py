@@ -55,12 +55,9 @@ class Solution:
         # if equal, return True
         # Otherwise, if nothing found in array finally return False
         nums.sort()
-        i = 0
-        for j in range(1,len(nums)):
-            if (nums[i] == nums[j]):
+        for i in range(1, len(nums)):
+            if (nums[i] == nums[i-1]):
                 return True
-            else:
-                i += 1
         return False
 
     
