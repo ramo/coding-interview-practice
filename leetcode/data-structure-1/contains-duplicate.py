@@ -94,10 +94,10 @@ class Solution:
         
 
 if __name__ == "__main__":
-    objs = Solution()
-    lst = [1,3,4,5,6,7,8]
-    status = objs.containsDuplicate1(lst)
-    print(status)
+    solution = Solution()
+    items = [1,3,4,5,6,7,8]
+    result = solution.containsDuplicate1(items)
+    print(result)
 
 
       
