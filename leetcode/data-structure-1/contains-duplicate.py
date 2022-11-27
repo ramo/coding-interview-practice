@@ -26,7 +26,7 @@
 #     1 <= nums.length <= 105
 #     -109 <= nums[i] <= 109
 
-
+from typing import List
 class Solution:
 
     # Time: O(n^2)
@@ -36,7 +36,16 @@ class Solution:
         # if found return True
         # else check all the numers
         # if nothing found finally return False
-        pass
+        i = 0
+        while (i < len(nums)):
+            j = i + 1
+            while (j < len(nums)):
+                if (nums[i] == nums[j]):
+                    return True
+                else:
+                    j += 1
+            i += 1
+        return False
     
     # Time: O(n * logn) + O(n)
     # Memory: O(1) (provided that we can perform in-place sorting)
@@ -45,7 +54,15 @@ class Solution:
         # Iterate from second number, check if this is equal to the previous number
         # if equal, return True
         # Otherwise, if nothing found in array finally return False
-        pass
+        nums.sort()
+        i = 0
+        for j in range(1,len(nums)):
+            if (nums[i] == nums[j]):
+                return True
+            else:
+                i += 1
+        return False
+
     
     
     # Time: O(n)
@@ -57,7 +74,14 @@ class Solution:
         # if exists return True
         # if not, put the number in to dict
         # finally if nothing found return False
-        pass
+        dict = {}
+        for i in nums:
+            if i in dict.keys():
+                return True
+            else:
+                dict[i] = "F"
+        return False
+
 
     # Time: O(n)
     # Memory: O(n)
@@ -68,5 +92,12 @@ class Solution:
         # Otherwise return True
         return len(set(nums)) != len(nums)
         
+
+if __name__ == "__main__":
+    objs = Solution()
+    lst = [1,3,4,5,6,7,8]
+    status = objs.containsDuplicate1(lst)
+    print(status)
+
 
       
