@@ -71,7 +71,7 @@ class Solution:
             if num in vistited_numbers.keys():
                 return True
             else:
-                vistited_numbers[num] = "None"
+                vistited_numbers[num] = None
         return False
 
 
