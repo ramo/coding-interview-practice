@@ -25,6 +25,8 @@
 
 
 # Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+from typing import List
+
 
 class Solution:
     
@@ -46,13 +48,17 @@ class Solution:
         # iterate each element in array
         # start from that index and go till end of array and find the current_sum and max_sum
         # do this for every index of the array. return the max_sum finally.
-        pass
-    
+        max_sum = float('-inf')
+        for i in range(len(nums)):
+            current_sum = 0
+            for j in range(i, len(nums)):
+                current_sum += nums[j]
+                max_sum = max(current_sum, max_sum)           
+        return max_sum
     
     # Time: O(n)
     # Memory: O(n)
     def maxSubArray(self, nums: List[int]) -> int:
-        pass    
         # [-2,1,-3,4,-1,2,1,-5,4]
 
         # [-2, 1, -2, 4, 3, 5, 6, 1, 5]   ans = 6
@@ -76,3 +82,9 @@ class Solution:
         for i in range(1, len(nums)):
             max_sums[i] = max(nums[i], max_sums[i-1] + nums[i])
         return max(max_sums)
+
+if __name__ == "__main__":
+    solution = Solution()
+    nums = [-2,1,-3,4,-1,2,1,-5,4]
+    result = solution.maxSubArray(nums)
+    print(result)
